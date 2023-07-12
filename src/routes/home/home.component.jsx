@@ -1,5 +1,5 @@
 import CategorysMenu from "../../components/category-menu/categorys.menu.jsx";
-
+import { Outlet } from "react-router-dom";
 const Home = () => {
   const categories = [
     {
@@ -29,7 +29,12 @@ const Home = () => {
     },
   ];
 
-  return <CategorysMenu categories={categories} />;
+  return (
+    <div>
+      <Outlet />
+      <CategorysMenu categories={categories} />
+    </div>
+  );
 };
 
 export default Home;
